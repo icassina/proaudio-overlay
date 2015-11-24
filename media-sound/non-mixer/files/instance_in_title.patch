@@ -1,0 +1,20 @@
+diff --git a/mixer/src/main.C b/mixer/src/main.C
+index 4e56e02..7e2bc56 100644
+--- a/mixer/src/main.C
++++ b/mixer/src/main.C
+@@ -237,11 +237,13 @@ main ( int argc, char **argv )
+ 
+     Fl_Double_Window *main_window;
+ 
++    char *title;
++    asprintf(&title, "%s - %s", APP_NAME, instance_name);
+     
+     {
+-        Fl_Double_Window *o = main_window = new Fl_Double_Window( 800, 600, "Non Mixer" );
++        Fl_Double_Window *o = main_window = new Fl_Double_Window( 800, 600, title );
+         {
+-            main_window->xclass( APP_NAME );
++            main_window->xclass( title );
+ 
+             { 
+                 Fl_Widget *o = mixer = new Mixer( 0, 0, main_window->w(), main_window->h(), NULL );

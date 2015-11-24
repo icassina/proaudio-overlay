@@ -34,7 +34,11 @@ DEPEND="${RDEPEND}
 	x11-libs/libxcb
 "
 
-pkg_setup(){
+src_prepare() {
+  epatch "${FILESDIR}/instance_in_title.patch"
+}
+
+pkg_setup() {
 	python_set_active_version 2
 	python_pkg_setup
 }
