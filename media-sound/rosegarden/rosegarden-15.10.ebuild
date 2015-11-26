@@ -1,4 +1,4 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
@@ -30,6 +30,7 @@ DEPEND="${RDEPEND}
 	x11-misc/makedepend"
 
 src_prepare() {
+	epatch "${FILESDIR}"/${PN}-12.12.25-debug.patch
 	eautoreconf
 }
 
