@@ -15,13 +15,14 @@ EGIT_BRANCH="master"
 LICENSE="GPL-2 LGPL-2"
 SLOT="0"
 KEYWORDS=""
-IUSE="+plugin samplers rtaudio vestige +rdf osc control gtk2 gtk3 qt5 projectm extra_plugins"
+IUSE="+plugin samplers rtaudio vestige +rdf osc control gtk2 gtk3 qt5 projectm pulseaudio extra_plugins"
 
 DEPEND="
 	dev-python/PyQt4[${PYTHON_USEDEP}]
 	samplers? (
 		media-sound/linuxsampler
-		media-sound/fluidsynth )
+		media-sound/fluidsynth
+	)
 	rdf? ( dev-python/rdflib[${PYTHON_USEDEP}] )
 	osc? (
 		media-libs/liblo
@@ -29,12 +30,14 @@ DEPEND="
 			media-libs/pyliblo[${PYTHON_USEDEP}]
 		)
 	)
+	pulseaudio? ( media-sound/pulseaudio )
 	plugin? (
 		gtk2? ( x11-libs/gtk+:2 )
 		gtk3? ( x11-libs/gtk+:3 )
 		qt5? ( dev-qt/qtgui:5 )
 		projectm? ( media-libs/libprojectm )
 		extra_plugins? (
+			sys-libs/libmagic
 			virtual/opengl
 			media-libs/libprojectm
 			|| ( x11-libs/ntk x11-libs/fltk )
