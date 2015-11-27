@@ -18,7 +18,7 @@ IUSE=""
 RDEPEND="dev-cpp/gtkmm:2.4
 	>=media-libs/libgig-9999
 	>=media-libs/libsndfile-1.0.2
-	>=media-sound/linuxsampler-9999"
+	>=media-sound/linuxsampler-2.0.0"
 DEPEND="${RDEPEND}
 	sys-devel/gettext
 	>=dev-util/intltool-0.35.0
