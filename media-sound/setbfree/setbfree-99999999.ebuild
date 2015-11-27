@@ -27,10 +27,6 @@ DEPEND="${RDEPEND}
 	virtual/pkgconfig"
 
 DOCS=(ChangeLog README.md)
-PATCHES=(
-	"${FILESDIR}/${PN}-multilib-strict-and-cflags.patch"
-	"${FILESDIR}/${PN}-respect-ldflags.patch"
-)
 
 src_compile() {
 	tc-export CC CXX
