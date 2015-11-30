@@ -4,13 +4,13 @@
 
 EAPI="5"
 PYTHON_COMPAT=( python{2_5,2_6,2_7} )
-inherit subversion waf-utils python-single-r1
+inherit git-r3 waf-utils python-single-r1
 
 RESTRICT="mirror"
 DESCRIPTION="A simple but extensible successor of LADSPA"
 HOMEPAGE="http://lv2plug.in/"
 SRC_URI=""
-ESVN_REPO_URI="http://lv2plug.in/repo/trunk"
+EGIT_REPO_URI="http://lv2plug.in/git/lv2.git"
 
 LICENSE="MIT"
 SLOT="0"
@@ -23,11 +23,7 @@ doc? (	app-doc/doxygen
 		app-text/asciidoc
 		dev-python/rdflib )"
 
-DOCS=( README )
-
-src_unpack() {
-	subversion_src_unpack
-}
+DOCS=( README.md )
 
 src_configure() {
 	local mywafconfargs=""
